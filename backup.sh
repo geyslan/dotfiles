@@ -36,7 +36,7 @@ function bck_all {
 }
 
 bck_all \
-~/.zshrc \
+~/.bashrc \
 ~/.config/user-dirs.dirs \
 ~/.config/i3/config \
 ~/.config/i3blocks/config \
