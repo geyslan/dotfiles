@@ -1,0 +1,38 @@
+#!/bin/bash
+# Session management script for i3.
+
+# The sub-process to execute.
+action="$1"
+
+function session--lock()
+{
+	i3lock --show-failed-attempts --ignore-empty-password --color=392837
+}
+
+# Select from available actions.
+case ${action} in
+	lock)
+		session--lock
+		;;
+	suspend)
+		session--lock && sleep 1
+		systemctl suspend
+		;;
+	hibernate)
+		session--lock && sleep 1
+		systemctl hibernate
+		;;
+	logout)
+		gnome-session-quit --logout --no-prompt
+		;;
+	reboot)
+		systemctl reboot
+		;;
+	poweroff)
+		systemctl poweroff -i
+		;;
+	*)
+		echo 'Unknown command, please use one of the following:'
+		echo "'lock', 'suspend', 'hibernate', 'logout', 'reboot', 'poweroff'"
+		;;
+esac

@@ -1,0 +1,21 @@
+#
+# ~/.bash_bindings
+#
+
+# If running a shell that can't emulate key binding, don't do anything
+[[ $(awk '/not enabled/ { print "disabled" }' <(bind 2>&1)) = "disabled" ]] && return
+
+# Kill entire line
+bind '"\C-xk":"\C-a\C-k"'
+
+# Kill one word backwards
+bind '"\eD":backward-kill-word'
+
+# Uppercase one word backwards
+bind '"\eU":"\eb\eu"'
+
+# Lowercase one word backwards
+bind '"\eL":"\eb\el"'
+
+# Print my public IP
+bind -x '"\ei":"echo public: $(curl -s http://ipinfo.io/ip)"'

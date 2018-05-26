@@ -1,7 +1,7 @@
-set nonewlines
 set nowrap
 set preserve
 set smooth
 set softwrap
-set tabsize 8
+set tabsize 4
+set linenumbers
 include "/usr/share/nano/*.nanorc"
