@@ -56,6 +56,7 @@ bck_all \
 ~/.gitconfig \
 ~/.config/i3/config \
 ~/.config/i3/bin/session \
+~/.config/i3/bin/hidpi-scale \
 ~/.config/i3status/config \
 ~/.config/compton.conf \
 ~/.config/gtk-3.0/bookmarks \

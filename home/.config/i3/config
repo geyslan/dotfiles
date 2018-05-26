@@ -229,7 +229,7 @@ bar {
 bindsym $mod+x exec --no-startup-id gnome-calculator
 
 # restart exec
-exec_always --no-startup-id ~/.config/i3/bin/hidpi_scale 1.5
+exec_always --no-startup-id ~/.config/i3/bin/hidpi-scale 1.5
 
 # startup exec
 exec --no-startup-id compton

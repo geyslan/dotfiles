@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# This workaround is due using gnome-flashback as a fancy i3wm backend
+
+# gnome has dpi hardcoded as 96
+enforced=96
+factor=$1
+dpi=$(echo "($enforced * $factor) / 1" | bc)
+
+# gsettings must be called first since it reconfigures Xresources
+gsettings set org.gnome.desktop.interface scaling-factor 0
+gsettings set org.gnome.desktop.interface text-scaling-factor $factor
+
+sleep 2
+printf "Xft.dpi: $dpi" | xrdb -merge
+xrandr --dpi $dpi
+echo $dpi
