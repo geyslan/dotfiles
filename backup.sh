@@ -5,8 +5,8 @@ yellow=$(tput setaf 10)
 blue=$(tput setaf 4)
 reset=$(tput sgr0)
 
-count=0
-processed=0
+count=
+processed=
 
 function bck {
 	local from="$1"
@@ -50,9 +50,8 @@ bck_all \
 ~/.bash_profile \
 ~/.bash_aliases \
 ~/.bash_bindings \
-~/.bash_functions \
 ~/.bash_profile \
-~/.bash_paths \
+~/.bash_env \
 ~/.gitconfig \
 ~/.config/i3/config \
 ~/.config/i3/bin/session \
@@ -63,6 +62,7 @@ bck_all \
 ~/.config/user-dirs.dirs \
 ~/.config/nano/nanorc \
 ~/.emacs.d/{init.el,config.org} \
+/etc/locale.conf \
 /etc/vconsole.conf \
 /etc/X11/xorg.conf.d/70-synaptics.conf \
 /etc/X11/xorg.conf.d/20-amdgpu.conf

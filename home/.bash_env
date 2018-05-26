@@ -1,0 +1,44 @@
+#
+# ~/.bash_env
+#
+
+## Environment variables
+
+export PROJS=~/projs
+export PROJSBIN="$PROJS/bin"
+
+## Paths
+
+# Insert paths
+insertpath () {
+	case ":$PATH:" in
+		*:"$1":*)
+			;;
+		"")
+			;;
+		*)
+			PATH="$1${PATH:+:$PATH}"
+	esac
+}
+
+# Append paths
+appendpath () {
+	case ":$PATH:" in
+		*:"$1":*)
+			;;
+		"")
+			;;
+		*)
+			PATH="${PATH:+$PATH:}$1"
+	esac
+}
+
+
+# colorgcc
+if [[ -d /usr/lib/colorgcc/bin ]]; then
+	insertpath '/usr/lib/colorgcc/bin'
+fi
+
+appendpath $PROJSBIN
+unset insertpath
+unset appendpath

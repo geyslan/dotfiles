@@ -2,8 +2,13 @@
 # ~/.bashrc
 #
 
+# Source environment variables and paths
+[[ -r ~/.bash_env ]] && . ~/.bash_env
+
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
 
 # Source aliases
 [[ -r ~/.bash_aliases ]] && . ~/.bash_aliases

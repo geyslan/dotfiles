@@ -2,16 +2,24 @@
 
 # This workaround is due using gnome-flashback as a fancy i3wm backend
 
-# gnome has dpi hardcoded as 96
-enforced=96
 factor=$1
-dpi=$(echo "($enforced * $factor) / 1" | bc)
+cursor_theme=$2
+# gnome has dpi hardcoded as 96
+enforced_dpi=96
+base_cursor=32
+dpi=$(echo "($enforced_dpi * $factor) / 1" | bc)
+cursor=$(echo "($base_cursor * $factor) / 1" | bc)
 
 # gsettings must be called first since it reconfigures Xresources
 gsettings set org.gnome.desktop.interface scaling-factor 0
 gsettings set org.gnome.desktop.interface text-scaling-factor $factor
+gsettings set org.gnome.desktop.interface cursor-theme "$cursor_theme"
 
-sleep 2
+sleep 1
 printf "Xft.dpi: $dpi" | xrdb -merge
+printf "Xcursor.size: $cursor" | xrdb -merge
+printf "Xcursor.theme: $cursor_theme" | xrdb -merge
 xrandr --dpi $dpi
-echo $dpi
+echo dpi $dpi
+echo cursor $cursor
+echo cursor-theme $cursor_theme

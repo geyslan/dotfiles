@@ -22,10 +22,10 @@ set $font_1 Noto Sans Mono
 #set $font_1 Inconsolata
 #set $font_1 monospace
 #set $font_1 Ubuntu Mono
-set $font_glyphs FontAwesome
-set $font_size 22px
+#set $font_glyphs FontAwesome
+set $font_size 20px
 
-font $font_1 $font_size
+font pango:$font_1 $font_size
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -33,6 +33,8 @@ font $font_1 $font_size
 # clear in small sizes. However, its unicode glyph coverage is limited, the old
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
+
+set $cursor_theme Breeze-Obsidian
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -49,7 +51,7 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec i3-dmenu-desktop --dmenu="dmenu -i -f -l 15 -fn '$font_1':pixelsize='$font_size'"
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -f -l 15 -fn '$font_1':pixelsize='$font_size'"
 
 # change focus
 bindsym $mod+j focus left
@@ -181,7 +183,7 @@ bindsym $mod+r mode "resize"
 set $session-handler ~/.config/i3/bin/session
 
 # session options
-set $session "Session: (l)ock, (s)uspend, (h)ibernate, Shift+(e)xit, Shift(r)eboot, Shift+(p)ower off"
+set $session "Session: (l)ock, (s)uspend, (h)ibernate, Shift+(l)ogout, Shift(r)eboot, Shift+(p)ower off"
 mode $session {
 	bindsym l  exec --no-startup-id $session-handler lock, mode "default"
 	bindsym s  exec --no-startup-id $session-handler suspend, mode "default"
@@ -229,7 +231,7 @@ bar {
 bindsym $mod+x exec --no-startup-id gnome-calculator
 
 # restart exec
-exec_always --no-startup-id ~/.config/i3/bin/hidpi-scale 1.5
+exec_always --no-startup-id ~/.config/i3/bin/hidpi-scale 1.5 $cursor_theme
 
 # startup exec
 exec --no-startup-id compton
