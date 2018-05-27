@@ -3,7 +3,7 @@ Description=Change wallpaper
 
 [Service]
 Type=oneshot
-ExecStart=/home/uzu/.config/i3/bin/wallpaper-changer
+ExecStart=/home/%u/.config/i3/bin/wallpaper-changer
 
 [Install]
 WantedBy=default.target
