@@ -1,6 +1,8 @@
 #!/bin/bash
 
-dest=~/projs/dotfiles
+dest="$PROJS"/dotfiles
+[[ ! -d "$dest" ]] && { echo "Destination directory \"$dest\" not found"; exit 1; }
+
 yellow=$(tput setaf 10)
 blue=$(tput setaf 4)
 reset=$(tput sgr0)
