@@ -4,6 +4,8 @@
 
 factor=$1
 cursor_theme=$2
+[[ -z "$factor" || -z "$cursor_theme" ]] && { echo "Usage: $0 factor cursor-theme"; exit 1; }
+
 # gnome has dpi hardcoded as 96
 enforced_dpi=96
 base_cursor=32
@@ -12,14 +14,14 @@ cursor=$(echo "($base_cursor * $factor) / 1" | bc)
 
 # gsettings must be called first since it reconfigures Xresources
 gsettings set org.gnome.desktop.interface scaling-factor 0
-gsettings set org.gnome.desktop.interface text-scaling-factor $factor
+gsettings set org.gnome.desktop.interface text-scaling-factor "$factor"
 gsettings set org.gnome.desktop.interface cursor-theme "$cursor_theme"
 
 sleep 1
 printf "Xft.dpi: $dpi" | xrdb -merge
 printf "Xcursor.size: $cursor" | xrdb -merge
 printf "Xcursor.theme: $cursor_theme" | xrdb -merge
-xrandr --dpi $dpi
-echo dpi $dpi
-echo cursor $cursor
-echo cursor-theme $cursor_theme
+xrandr --dpi "$dpi"
+echo dpi "$dpi"
+echo cursor "$cursor"
+echo cursor-theme "$cursor_theme"

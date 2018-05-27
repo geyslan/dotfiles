@@ -6,6 +6,8 @@
 
 export PROJS=~/projs
 export PROJSBIN="$PROJS/bin"
+export WALLDIR="/data/pics/wallpapers"
+export LOCKWALL="/tmp/lock-wallpaper.png"
 
 ## Paths
 
@@ -35,10 +37,7 @@ appendpath () {
 
 
 # colorgcc
-if [[ -d /usr/lib/colorgcc/bin ]]; then
-	insertpath '/usr/lib/colorgcc/bin'
-fi
-
+[[ -d /usr/lib/colorgcc/bin ]] && insertpath '/usr/lib/colorgcc/bin'
 appendpath $PROJSBIN
 unset insertpath
 unset appendpath

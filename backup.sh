@@ -56,11 +56,14 @@ bck_all \
 ~/.config/i3/config \
 ~/.config/i3/bin/session \
 ~/.config/i3/bin/hidpi-scale \
+~/.config/i3/bin/wallpaper-changer \
 ~/.config/i3status/config \
 ~/.config/compton.conf \
 ~/.config/gtk-3.0/bookmarks \
 ~/.config/user-dirs.dirs \
 ~/.config/nano/nanorc \
+~/.config/systemd/user/wallpaper-changer.timer \
+~/.config/systemd/user/wallpaper-changer.service \
 ~/.emacs.d/{init.el,config.org} \
 /etc/locale.conf \
 /etc/vconsole.conf \

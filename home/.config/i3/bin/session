@@ -1,12 +1,14 @@
 #!/bin/bash
 # Session management script for i3.
 
+[[ -r ~/.bash_profile ]] && . ~/.bash_profile
+
 # The sub-process to execute.
 action="$1"
 
 function session--lock()
 {
-	i3lock --show-failed-attempts --ignore-empty-password --color=392837
+	i3lock --show-failed-attempts --ignore-empty-password --image "$LOCKWALL"
 }
 
 # Select from available actions.
@@ -29,7 +31,7 @@ case ${action} in
 		systemctl reboot
 		;;
 	poweroff)
-		systemctl poweroff -i
+		systemctl poweroff
 		;;
 	*)
 		echo 'Unknown command, please use one of the following:'

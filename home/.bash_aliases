@@ -5,13 +5,9 @@
 shopt -s expand_aliases
 
 ## New commands ##
+
 alias psg='ps -Af | grep'		# requires an argument
 alias hisg='history | grep'		# requires an argument
-
-function cd()
-{
-	builtin cd "$*" && ls
-}
 
 # Compile and execute a C source on the fly
 crun() {
@@ -25,6 +21,7 @@ crun() {
 
 
 ## Modified commands ##
+
 alias emacs='emacs -nw'
 alias ping='ping -c 5'
 alias mkdir='mkdir -p -v'
@@ -37,3 +34,8 @@ alias dmesg='dmesg --color'
 alias pacman='pacman --color=auto'
 alias less='less -R'
 alias mplayer='mplayer -msgcolor'
+
+function cd()
+{
+	builtin cd "$*" && ls
+}
