@@ -1,0 +1,9 @@
+[Unit]
+Description=Run wallpaper-changer.service every hour and on boot
+
+[Timer]
+OnBootSec=3min
+OnUnitActiveSec=1h
+
+[Install]
+WantedBy=timers.target

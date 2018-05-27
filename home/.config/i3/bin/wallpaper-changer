@@ -1,0 +1,15 @@
+#!/bin/bash
+
+[[ -r ~/.bash_profile ]] && . ~/.bash_profile
+
+dir="$WALLDIR"
+[[ ! -d "$dir" ]] && { echo "Directory $dir doesn't exist"; exit 1; }
+
+wallpapers="$(find $dir -maxdepth 1 -iname '*.jpg' -type f 2>/dev/null | sort -R)"
+[[ -z "$wallpapers" ]] && { echo "There is no wallpaper in the directory $dir"; exit 1; }
+
+workwall=$(echo "$wallpapers" | head -1)
+lockwall=$(echo "$wallpapers" | tail -1)
+
+gsettings set org.gnome.desktop.background picture-uri "file://$workwall"
+convert "$lockwall" "$LOCKWALL"
