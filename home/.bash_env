@@ -6,8 +6,13 @@
 
 export PROJS=~/projs
 export PROJSBIN="$PROJS/bin"
+
 export WALLDIR="/data/pics/wallpapers"
 export LOCKWALL="/tmp/lock-wallpaper.png"
+
+# fix ć to ç
+export GTK_IM_MODULE=cedilla
+export QT_IM_MODULE=cedilla
 
 ## Paths
 
@@ -35,9 +40,12 @@ appendpath () {
 	esac
 }
 
+# If running interactively
+if [[ $- = *i* ]]; then
+	# colorgcc
+	[[ -d /usr/lib/colorgcc/bin ]] && insertpath '/usr/lib/colorgcc/bin'
+fi
 
-# colorgcc
-[[ -d /usr/lib/colorgcc/bin ]] && insertpath '/usr/lib/colorgcc/bin'
 appendpath $PROJSBIN
 unset insertpath
 unset appendpath
