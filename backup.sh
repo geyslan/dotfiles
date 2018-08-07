@@ -70,6 +70,8 @@ bck_all \
 /etc/locale.conf \
 /etc/vconsole.conf \
 /etc/X11/xorg.conf.d/70-synaptics.conf \
-/etc/X11/xorg.conf.d/20-amdgpu.conf
+/etc/X11/xorg.conf.d/10-intel.conf \
+/etc/X11/xorg.conf.d/20-amdgpu.conf \
+/etc/modprobe.d/i915.conf
 
 echo "$processed of $count files processed"
