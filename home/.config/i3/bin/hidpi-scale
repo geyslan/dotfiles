@@ -10,12 +10,17 @@ cursor_theme=$2
 enforced_dpi=96
 base_cursor=32
 dpi=$(echo "($enforced_dpi * $factor) / 1" | bc)
-cursor=$(echo "($base_cursor * $factor) / 1" | bc)
+if (( $(echo "$factor"'<'1.5 | bc -l) )); then
+	cursor=$base_cursor
+else
+	cursor=$(echo "($base_cursor * 1.5) / 1" | bc)
+fi
 
 # gsettings must be called first since it reconfigures Xresources
-gsettings set org.gnome.desktop.interface scaling-factor 0
+gsettings set org.gnome.desktop.interface scaling-factor 1
 gsettings set org.gnome.desktop.interface text-scaling-factor "$factor"
 gsettings set org.gnome.desktop.interface cursor-theme "$cursor_theme"
+gsettings set org.gnome.desktop.interface cursor-size "$cursor"
 
 sleep 1
 printf "Xft.dpi: $dpi" | xrdb -merge

@@ -34,7 +34,8 @@ font pango:$font_1 $font_size
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-set $cursor_theme Breeze-Obsidian
+#set $cursor_theme Breeze-Obsidian
+set $cursor_theme Adwaita
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -234,4 +235,4 @@ bindsym $mod+x exec --no-startup-id gnome-calculator
 exec_always --no-startup-id ~/.config/i3/bin/hidpi-scale 1.5 $cursor_theme
 
 # startup exec
-exec --no-startup-id compton
+#exec --no-startup-id compton

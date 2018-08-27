@@ -1,3 +1,6 @@
 [user]
 	email = geyslan@gmail.com
 	name = Geyslan
+
+[core]
+	editor = nano
