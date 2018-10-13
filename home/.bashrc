@@ -20,3 +20,6 @@
 [[ -r ~/.bash_bindings ]] && . ~/.bash_bindings
 
 PS1='[\u@\h \W]\$ '
+
+BROWSER=/usr/bin/google-chrome-stable
+EDITOR=/usr/bin/nano

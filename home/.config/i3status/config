@@ -15,7 +15,7 @@ general {
 #order += "load"
 order += "cpu_usage"
 order += "cpu_temperature 0"
-order += "cpu_temperature 1"
+#order += "cpu_temperature 1"
 order += "disk /"
 order += "disk /home"
 order += "wireless _first_"
@@ -60,7 +60,7 @@ cpu_usage {
 
 cpu_temperature 0 {
         format = "  cpu %degrees°C"
-        path = "/sys/class/hwmon/hwmon3/temp1_input"
+        path = "/sys/class/hwmon/hwmon0/temp1_input"
 }
 
 cpu_temperature 1 {

@@ -14,6 +14,10 @@ export LOCKWALL="/tmp/lock-wallpaper.png"
 export GTK_IM_MODULE=cedilla
 export QT_IM_MODULE=cedilla
 
+# vdpau
+export VDPAU_DRIVER=radeonsi
+export LIBVA_DRIVER_NAME=radeonsi
+
 ## Paths
 
 # Insert paths
