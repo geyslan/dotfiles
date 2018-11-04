@@ -65,6 +65,7 @@ bck_all \
 ~/.config/gtk-3.0/bookmarks \
 ~/.config/user-dirs.dirs \
 ~/.config/nano/nanorc \
+~/.config/mpv/mpv.conf \
 ~/.config/systemd/user/wallpaper-changer.timer \
 ~/.config/systemd/user/wallpaper-changer.service \
 ~/.emacs.d/{init.el,config.org} \
