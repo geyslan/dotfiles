@@ -1,0 +1,10 @@
+[Unit]
+Description=fix to prevent system from waking immediately after suspend or when usb keyboard is used
+
+[Service]
+ExecStart=/bin/sh -c '/bin/echo XHC > /proc/acpi/wakeup'
+Type=oneshot
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

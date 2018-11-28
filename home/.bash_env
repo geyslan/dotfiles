@@ -7,6 +7,8 @@
 export PROJS=~/projs
 export PROJSBIN="$PROJS/bin"
 
+export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+
 export WALLDIR="/data/pics/wallpapers"
 export LOCKWALL="/tmp/lock-wallpaper.png"
 

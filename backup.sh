@@ -71,9 +71,12 @@ bck_all \
 ~/.emacs.d/{init.el,config.org} \
 /etc/locale.conf \
 /etc/vconsole.conf \
+/etc/default/grub \
+/etc/mkinitcpio.conf \
 /etc/X11/xorg.conf.d/70-synaptics.conf \
 /etc/X11/xorg.conf.d/10-intel.conf \
 /etc/X11/xorg.conf.d/20-amdgpu.conf \
-/etc/modprobe.d/i915.conf
+/etc/modprobe.d/i915.conf \
+/etc/systemd/system/sleep-fix.service
 
 echo "$processed of $count files processed"
