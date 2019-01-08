@@ -4,4 +4,5 @@ set smooth
 set softwrap
 set tabsize 4
 set linenumbers
+set suspend
 include "/usr/share/nano/*.nanorc"
