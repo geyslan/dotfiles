@@ -55,6 +55,7 @@ bck_all \
 ~/.bash_profile \
 ~/.bash_env \
 ~/.gitconfig \
+~/.xbindkeysrc \
 ~/.config/chrome-flags.conf \
 ~/.config/i3/config \
 ~/.config/i3/bin/session \

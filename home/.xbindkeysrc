@@ -1,0 +1,7 @@
+# Navigate through gnome workspaces
+
+"xte 'keydown Super_L' 'key Prior' 'keyup Super_L'"
+	b:9
+
+"xte 'keydown Super_L' 'key Next' 'keyup Super_L'"
+	b:8
