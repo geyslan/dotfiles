@@ -1,6 +1,45 @@
 [user]
+	name = Geyslan G. Bem
 	email = geyslan@gmail.com
-	name = Geyslan
+	signingkey = FCF19398
+
+[includeIf "gitdir:~/code/KubeArmor/"]
+	path = ~/.gitconfig_accuknox
+
+[includeIf "gitdir:~/code/cilium/"]
+	path = ~/.gitconfig_accuknox
 
 [core]
 	editor = nano
+	pager = diff-so-fancy | less --tabs=4 -RFX
+
+[interactive]
+	diffFilter = diff-so-fancy --patch
+
+[color]
+	ui = true
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	func = 146 bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+
+[diff-so-fancy]
+	markEmptyLines = true
+	changeHunkIndicators = false
+
+[commit]
+	gpgSign = true
+
+[tag]
+	gpgSign = true
