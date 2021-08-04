@@ -9,6 +9,9 @@
 [includeIf "gitdir:~/code/cilium/"]
 	path = ~/.gitconfig_accuknox
 
+[includeIf "gitdir:~/code/ka-libbpf/"]
+	path = ~/.gitconfig_accuknox
+
 [core]
 	editor = nano
 	pager = diff-so-fancy | less --tabs=4 -RFX
@@ -43,3 +46,6 @@
 
 [tag]
 	gpgSign = true
+
+[init]
+	defaultBranch = main
