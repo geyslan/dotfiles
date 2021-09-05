@@ -1,7 +1,7 @@
 [user]
 	name = Geyslan G. Bem
 	email = geyslan@gmail.com
-	signingkey = FCF19398
+	signingkey = 4FC8369D1BC0020F
 
 [includeIf "gitdir:~/code/KubeArmor/"]
 	path = ~/.gitconfig_accuknox
@@ -42,10 +42,13 @@
 	changeHunkIndicators = false
 
 [commit]
-	gpgSign = true
+	gpgsign = true
 
 [tag]
 	gpgSign = true
 
 [init]
 	defaultBranch = main
+
+[gpg]
+	program = gpg2
