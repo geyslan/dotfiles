@@ -3,18 +3,18 @@
 	email = geyslan@gmail.com
 	signingkey = 4FC8369D1BC0020F
 
-[includeIf "gitdir:~/code/KubeArmor/"]
-	path = ~/.gitconfig_accuknox
+#[includeIf "gitdir:~/code/KubeArmor/"]
+#	path = ~/.gitconfig_accuknox
 
-[includeIf "gitdir:~/code/cilium/"]
-	path = ~/.gitconfig_accuknox
+#[includeIf "gitdir:~/code/cilium/"]
+#	path = ~/.gitconfig_accuknox
 
-[includeIf "gitdir:~/code/ka-libbpf/"]
-	path = ~/.gitconfig_accuknox
+#[includeIf "gitdir:~/code/ka-libbpf/"]
+#	path = ~/.gitconfig_accuknox
 
 [core]
 	editor = nano
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = diff-so-fancy | less --tabs=8 -RFX
 
 [interactive]
 	diffFilter = diff-so-fancy --patch
@@ -52,3 +52,6 @@
 
 [gpg]
 	program = gpg2
+
+[alias]
+	l = log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %an%C(dim white)%C(reset) %C(bold magenta)(%ar)%C(reset)%C(bold green)%d%C(reset)%n %C(italic white)%s%n%C(reset)'
