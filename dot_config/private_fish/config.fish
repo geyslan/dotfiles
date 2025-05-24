@@ -6,3 +6,6 @@ if status is-interactive
         history --merge
     end
 end
+
+# Go environment configuration
+fish_add_path /usr/local/go/bin
